@@ -14,7 +14,7 @@ const Navbar = () => {
                 <div className=" rotate-45 mr-3">
                   <CgWorkAlt size={69} color="white" />{" "}
                 </div>
-                <span className="hidden md:block text-white text-2xl font-bold ml-2 bg-gradient-to-r from-violet-500 to-fuchsia-500 pr-16 pl-4  rounded-r-xl">
+                <span className="hidden md:block text-white text-2xl font-bold ml-2 bg-gradient-to-r from-fuchsia-500 to-violet-500 pr-16 pl-4  rounded-r-xl">
                   Job block
                 </span>
               </Link>

@@ -15,11 +15,11 @@ const UnAunthenticated = () => {
         <div className="absolute top-32 -right-44 2xl:-right-72 2xl:top-24 w-[120%] 2xl:h-[80%] h-[70%] bg-purple-500 rotate-3  shadow-lg shadow-purple-500"></div>
         <div className="flex flex-col justify-center h-screen w-full items-center ">
           <h1 className="font-bold text-purple-200 text-6xl lg:text-8xl 2xl:text-9xl  z-10">
-            Project{" "}
-            <span className="text-pretty text-white 2xl:text-8xl">Hub</span>
+            Job
+            <span className="text-pretty text-white 2xl:text-8xl">Block</span>
           </h1>
           <p className="pt-14 text-white 2xl:text-xl font-bold z-10">
-            Debugging attracts depression.....
+            Find the job that suites your skill.
           </p>
         </div>
       </div>

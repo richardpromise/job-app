@@ -13,7 +13,7 @@ const JobCard = ({ job }) => {
 
   return (
     <>
-      <div className="bg-white rounded-xl shadow-md relative">
+      <div className="bg-white rounded-xl shadow-md relative hover:scale-105 duration-300">
         <div className="p-4">
           <div className="mb-6">
             <div className="text-gray-600 my-2">{job.type}</div>

@@ -1,0 +1,51 @@
+  // Validatioh
+  // const validate = () => {
+  //   let formDetails;
+  //   if (localStorage.getItem("formDetails") === null) {
+  //     formDetails = [];
+  //     isErroBlock(true);
+
+  //     // make sign up text red
+  //     setTimeout(() => {
+  //       isPersuade("text-red-500 ");
+  //     }, 2000);
+
+  //     // return sign up to original state
+  //     setTimeout(() => {
+  //       isPersuade("text-purple-500");
+  //     }, 6000);
+
+  //     // error message
+  //     isErromsg("Sorry invalid account details.");
+  //     setTimeout(() => {
+  //       isErroBlock(false);
+  //     }, 3000);
+  //   } else {
+  //     formDetails = JSON.parse(localStorage.getItem("formDetails"));
+  //   }
+
+  //   formDetails.forEach((item) => {
+  //     if (item.userEmail !== email) {
+  //       isEmailError("Email does not exist");
+  //     } else {
+  //       isEmailError("");
+  //     }
+
+  //     if (item.userPasEsword !== passsword) {
+  //       isuserNamePassword("Wrong password");
+  //     } else {
+  //       isuserNamePassword("");
+  //     }
+
+  //     if (email === item.userEmail && passsword === item.userPasEsword) {
+  //       handleNavigate();
+
+  //     } else {
+  //       isErromsg("Sorry invalid account details");
+  //     }
+  //   });
+  // };
+
+  // const handleNavigate = () => {
+  //   return !btnDisabled ? navigate("/verified") : null;
+  // };

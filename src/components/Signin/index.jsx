@@ -8,80 +8,20 @@ export default function Signin() {
   // page navigator
   const navigate = useNavigate();
 
-  // animated error handlern
-  const [erroblock, isErroBlock] = React.useState(false);
-  const [erromsg, isErromsg] = React.useState("");
-
   const [persuade, isPersuade] = React.useState("text-purple-500 md:pl-4");
 
-  const [emailError, isEmailError] = React.useState("");
-  const [passswordError, isuserNamePassword] = React.useState("");
+  const [emailError, setEmailError] = React.useState(false);
+  const [emailErrorMsg, setEmailErrorMsg] = React.useState("");
+  const [passswordErrorMsg, setPasswordErrorMsg] = React.useState("");
+  const [passwordError, setPaswordError] = React.useState(false);
 
   // get form values
   const [email, setEmail] = useState("");
   const [passsword, setPassword] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
 
-  // Validatioh
-  // const validate = () => {
-  //   let formDetails;
-  //   if (localStorage.getItem("formDetails") === null) {
-  //     formDetails = [];
-  //     isErroBlock(true);
-
-  //     // make sign up text red
-  //     setTimeout(() => {
-  //       isPersuade("text-red-500 ");
-  //     }, 2000);
-
-  //     // return sign up to original state
-  //     setTimeout(() => {
-  //       isPersuade("text-purple-500");
-  //     }, 6000);
-
-  //     // error message
-  //     isErromsg("Sorry invalid account details.");
-  //     setTimeout(() => {
-  //       isErroBlock(false);
-  //     }, 3000);
-  //   } else {
-  //     formDetails = JSON.parse(localStorage.getItem("formDetails"));
-  //   }
-
-  //   formDetails.forEach((item) => {
-  //     if (item.userEmail !== email) {
-  //       isEmailError("Email does not exist");
-  //     } else {
-  //       isEmailError("");
-  //     }
-
-  //     if (item.userPasEsword !== passsword) {
-  //       isuserNamePassword("Wrong password");
-  //     } else {
-  //       isuserNamePassword("");
-  //     }
-
-  //     if (email === item.userEmail && passsword === item.userPasEsword) {
-  //       handleNavigate();
-
-  //     } else {
-  //       isErromsg("Sorry invalid account details");
-  //     }
-  //   });
-  // };
-
-  // const handleNavigate = () => {
-  //   return !btnDisabled ? navigate("/verified") : null;
-  // };
-
   useEffect(() => {
     setBtnDisabled(!(email !== "" && passsword !== ""));
-
-    // if (email !== "" && passsword !== "") {
-    //   setBtnDisabled(false);
-    // } else {
-    //   setBtnDisabled(true);
-    // }
   }, [email, passsword]);
 
   return (
@@ -115,29 +55,6 @@ export default function Signin() {
 
           {/* form */}
           <form className="w-full  relative">
-            {/* animated error message */}
-            {erroblock && (
-              <AnimatePresence>
-                {" "}
-                <motion.div
-                  className="h-10 bg-white rounded-lg border-l-[8px] border-l-purple-500 px-7 absolute -top-20 -right-20 md:border-t-purple-500 md:border-t-8 flex justify-center items-center shadow-sm shadow-black  md:border-l-0"
-                  initial={{ scale: 1, opacity: 0, x: 100, y: 0 }}
-                  animate={{ scale: 1, opacity: 1, x: -100, y: 0 }}
-                  transition={{
-                    duration: 0.5,
-                  }}
-                  exit={{
-                    scale: 0,
-                    opacity: 0,
-                    x: -100,
-                    y: 20,
-                  }}
-                >
-                  <h1 className="font-semibold text-gray-700 ">{erromsg}</h1>
-                </motion.div>
-              </AnimatePresence>
-            )}
-
             <div className="flex flex-col items-center gap-10 w-full ">
               {/* email */}
               <Textfield
@@ -148,8 +65,9 @@ export default function Signin() {
                 type={"email"}
                 value={email}
                 placeholder={"email@domain.com"}
-                msg={emailError}
+                msg={emailErrorMsg}
                 labelStyle={"text-[14px] text-[#5C5959] font-[400] w-full"}
+                error={emailError}
               />
 
               {/* password */}
@@ -161,8 +79,9 @@ export default function Signin() {
                 type={"password"}
                 value={passsword}
                 placeholder={"Password"}
-                msg={passswordError}
+                msg={passswordErrorMsg}
                 labelStyle={"text-[14px] text-[#5C5959] font-[400] w-full"}
+                error={passwordError}
               />
 
               {/* extra */}
